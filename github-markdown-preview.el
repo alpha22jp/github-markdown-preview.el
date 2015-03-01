@@ -66,7 +66,7 @@
   "Setup github-markdown-preview to work."
   (interactive)
   (unless (file-directory-p github-markdown-preview-cache-dir)
-    (make-directory github-markdown-preview-cache-dir)
+    (make-directory github-markdown-preview-cache-dir t)
     (copy-file (concat github-markdown-preview-lib-dir "github.css")
                (concat github-markdown-preview-cache-dir "github.css"))))
 
