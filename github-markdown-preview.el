@@ -4,6 +4,7 @@
 
 ;; Author: alpha22jp <alpha22jp@gmail.com>
 ;; Version: 0.1.0
+;; Package-Requires: ((request-deferred "0.2.0"))
 ;; Keywords: github markdown
 ;; URL: https://github.com/alpha22jp/github-markdown-preview.el
 
