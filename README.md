@@ -9,7 +9,20 @@ Emacs lisp to preview markdowned text with browser using Github markdown render 
 
 ## Installation
 
+### via MELPA (not yet)
+
 <kbd>M-x package-install [RET] github-markdown-preview [RET]</kbd>
+
+### Manually
+
+    $ git clone https://github.com/alpha22jp/github-markdown-preview.el.git
+
+Then, add the directory you put this package to `load-path` of your Emacs like below.
+
+```init.el
+(add-to-list 'load-path
+             (expand-file-name "~/foo/bar/github-markdown-preview.el"))
+```
 
 ## Configuration
 
