@@ -5,32 +5,27 @@ Emacs lisp to preview markdowned text with browser using Github markdown render 
 ## Requirements
 
 * Emacs 23 or higher.
-* Browser (Tested on Firefox for Linux).
+* Browser (Tested on Firefox and Chrome for Linux).
 
 ## Installation
 
-### via MELPA (not yet)
-
-<kbd>M-x package-install [RET] github-markdown-preview [RET]</kbd>
-
 ### Manually
 
-    $ git clone https://github.com/alpha22jp/github-markdown-preview.el.git
+``` shell
+$ git clone https://github.com/alpha22jp/github-markdown-preview.el.git
+```
 
 Then, add the directory you put this package to `load-path` of your Emacs like below.
 
-```init.el
+``` emacs-lisp
 (add-to-list 'load-path
              (expand-file-name "~/foo/bar/github-markdown-preview.el"))
 ```
 
-## Configuration
+Then add the following line to your Emacs setup file.
 
-Add the following lines to your Emacs setup file.
-
-```init.el
+``` emacs-lisp
 (require 'github-markdown-preview)
-(github-markdown-preview-setup)
 ```
 
 ## Usage
@@ -39,7 +34,7 @@ Add the following lines to your Emacs setup file.
 
 ## Known issues
 
-* Need to reload window when the preview file is already opened on the browser (This problem may be only for Firefox, but I haven't tested any other browser).
+* For Firefox, need to reload window when the preview file is already opened on the browser.
 
 ## History
 
