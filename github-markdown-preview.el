@@ -35,9 +35,20 @@
 (defvar github-markdown-preview-cache-dir
   (expand-file-name "~/.emacs.d/cache/"))
 
+;;;###autoload
+(defun github-markdown-preview-setup ()
+  "Setup github-markdown-preview to work."
+  (interactive)
+  (unless (file-directory-p github-markdown-preview-cache-dir)
+    (make-directory github-markdown-preview-cache-dir t)
+    (copy-file (concat github-markdown-preview-lib-dir "github.css")
+               (concat github-markdown-preview-cache-dir "github.css"))))
+
+;;;###autoload
 (defun github-markdown-preview ()
   "Preview current buffer with browser as Github markdowned text."
   (interactive)
+  (github-markdown-preview-setup)
   (deferred:$
     (request-deferred
      "https://api.github.com/markdown/raw"
@@ -60,15 +71,6 @@
                (buffer-string))
              nil file nil)
             (browse-url file)))))))
-
-;;;###autoload
-(defun github-markdown-preview-setup ()
-  "Setup github-markdown-preview to work."
-  (interactive)
-  (unless (file-directory-p github-markdown-preview-cache-dir)
-    (make-directory github-markdown-preview-cache-dir t)
-    (copy-file (concat github-markdown-preview-lib-dir "github.css")
-               (concat github-markdown-preview-cache-dir "github.css"))))
 
 (provide 'github-markdown-preview)
 
